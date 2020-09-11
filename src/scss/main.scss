@@ -1,0 +1,107 @@
+// $primary-background: #f0ff14;
+$primary-text: #fff;
+$secondary-text: #000;
+// $accent-color: #3b55ff;
+
+$primary-background: #333;
+$accent-color: rgb(4, 97, 151);
+
+body {
+  background-color: $primary-background;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+.btn {
+  background-color: $accent-color;
+  color: $primary-text;
+  border: 0;
+  font-family: inherit;
+  outline: none;
+  border-radius: 25px;
+  padding: 15px 35px;
+  cursor: pointer;
+  transition: 0.5s background-color;
+
+  &:hover {
+    background-color: lighten($accent-color, 5%);
+  }
+}
+
+.align-right {
+  float: right;
+}
+
+.m-25 {
+  margin: 25px;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 25px;
+  padding: 0 50px 50px 50px;
+  justify-content: center;
+
+  .note {
+    background-color: #fff;
+    height: 350px;
+
+    &-header {
+      background-color: $accent-color;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 25px;
+
+      img {
+        width: 15px;
+        cursor: pointer;
+      }
+    }
+
+    &-title {
+      padding: 10px 25px;
+      input {
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        font-size: 1.5em;
+        font-weight: 900;
+      }
+    }
+
+    &-body {
+      padding: 0 25px;
+      textarea {
+        background-color: transparent;
+        border: 0;
+        resize: none;
+        height: 100%;
+        outline: none;
+        width: 100%;
+        height: 225px;
+        font-size: 0.8em;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .notes {
+    grid-template-columns: 1fr;
+    padding: 0 100px 50px 100px;
+    justify-content: center;
+  }
+}
